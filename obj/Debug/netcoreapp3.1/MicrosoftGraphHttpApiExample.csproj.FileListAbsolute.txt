@@ -1,0 +1,15 @@
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.exe
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.deps.json
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.runtimeconfig.json
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.runtimeconfig.dev.json
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.dll
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.pdb
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.csprojAssemblyReference.cache
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.AssemblyInfoInputs.cache
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.AssemblyInfo.cs
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.csproj.CoreCompileInputs.cache
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.dll
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.pdb
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.genruntimeconfig.cache
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\tihanewi\Downloads\MicrosoftGraphHttpApiExample\obj\Debug\netcoreapp3.1\MicrosoftGraphHttpApiExample.csproj.CopyComplete
