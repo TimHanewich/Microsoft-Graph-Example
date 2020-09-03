@@ -1,5 +1,7 @@
 using System;
 using System.Net.Http;
+using System.Text;
+using System.Text.Encodings;
 
 namespace MicrosoftGraphHttpApiExample
 {
@@ -63,6 +65,7 @@ namespace MicrosoftGraphHttpApiExample
                 Console.WriteLine("1 - Test and prove conneciton with 'WhoAmI'");
                 Console.WriteLine("2 - Retrieve an Account record");
                 Console.WriteLine("3 - Retrieve a custom record");
+                Console.WriteLine("4 - Update custom entity reference");
                 string ToDo = Console.ReadLine();
                 Console.WriteLine();
                 if (ToDo == "1")
@@ -101,9 +104,9 @@ namespace MicrosoftGraphHttpApiExample
                 }
                 else if (ToDo == "3")
                 {
-                    //Construct the account query endpoint
+                    //Construct the animal query endpoint
                     //To see the "entity setter" keywords (for example, the "accounts" is the keyword to reference the account entity) for all entities, go to https://<<Your org name>>.crm.dynamics.com/api/data/v9.0/ in an already-authenticated browser session. (sign into power apps, then go to that end point)
-                    string animalGUID = "01b39b2d-10ee-ea11-a817-000d3a3b7d88"; //This is the GUID value (unique identifier of that record) of the account record in CDS
+                    string animalGUID = "12b673d8-11ee-ea11-a817-000d3a3b7d88"; //This is the GUID value (unique identifier of that record) of the account record in CDS
                     string query_endpoint = "crda6_animals(" + animalGUID + ")";
                     
                     //Construct the request
@@ -117,6 +120,30 @@ namespace MicrosoftGraphHttpApiExample
                     HttpResponseMessage resp = hc.SendAsync(req).Result;
                     string resp_txt = resp.Content.ReadAsStringAsync().Result;
                     Console.WriteLine(resp_txt);
+                }
+                else if (ToDo == "4")
+                {
+                    //string update_body = "{\"item/_crda6_parentanimal_value@odata.bind\":\"crda6_animals(e8d51151-12ee-ea11-a817-000d3a3b7d88)\"}"; //Here we are updating one of the fields (change the parent animal)
+                    string update_body = "{\"crda6_name\":\"Johnny the Evolved Jaguar\"}";
+
+                    //Construct the query
+                    string animalGUID = "12b673d8-11ee-ea11-a817-000d3a3b7d88";
+                    string query_endpoint = "crda6_animals(" + animalGUID + ")";
+
+                    //Construct the request
+                    HttpRequestMessage req = new HttpRequestMessage();
+                    req.Method = HttpMethod.Patch; //Patch method used for record updates
+                    req.Headers.Add("Authorization", "Bearer " + access_token);
+                    req.RequestUri = new Uri(web_api_url + query_endpoint);
+                    req.Content = new StringContent(update_body, Encoding.UTF8, "application/json");
+
+                    //Make the call
+                    HttpClient hc = new HttpClient();
+                    HttpResponseMessage resp = hc.SendAsync(req).Result;
+                    Console.WriteLine("Response status code: " + resp.StatusCode.ToString());
+                    string content = resp.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine("Response content: " + content);
+                    Console.WriteLine("Call complete!");
                 }
                 else
                 {
