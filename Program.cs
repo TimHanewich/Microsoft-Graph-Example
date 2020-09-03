@@ -10,17 +10,20 @@ namespace MicrosoftGraphHttpApiExample
     {
         static void Main(string[] args)
         {
-            /////////   INPUT   ////////////
-            string ClientID = "e32b77a3-67df-411b-927b-f05cc6fe8d5d"; //The registered Client ID (same as "Application ID") that you can find in the Azure portal.
-            string TenantID = "48bfdaf9-31eb-482c-970d-8dc9e97c26bc"; //Your tenant ID (also can find under "Azure Active Directory" in the Azure portal).
-            /////////////////////////////////
+            
 
-            OnBehalfOfUserExample(ClientID, TenantID);
         }
 
 
-        static void OnBehalfOfUserExample(string client_id, string tenant_id)
+        static void OnBehalfOfUserExample()
         {
+
+            /////////   INPUT   ////////////
+            string client_id = "e32b77a3-67df-411b-927b-f05cc6fe8d5d"; //The registered Client ID (same as "Application ID") that you can find in the Azure portal.
+            string tenant_id = "48bfdaf9-31eb-482c-970d-8dc9e97c26bc"; //Your tenant ID (also can find under "Azure Active Directory" in the Azure portal).
+            /////////////////////////////////
+
+
             //Get the URL to direct the user to (where they authenticate into)
             //The Redirect URI from this link must match one of the Redirect URI's that are registered for this application in the Azure portal.
             //The response mode equalling query means that the return "code" piece will be part of the address that the user will see.
@@ -28,6 +31,9 @@ namespace MicrosoftGraphHttpApiExample
             //The offline access scope is what causes the graph api to return a refresh token - a value we can hold onto to get another access token at a point in the future (after expiration of the access token)
             string auth_url = "https://login.microsoftonline.com/" + tenant_id + "/oauth2/v2.0/authorize?client_id=" + client_id + "&response_type=code&redirect_uri=https://www.google.com/&response_mode=query&scope=offline_access%20user.read";
             
+
+
+
             //Show the message
             Console.WriteLine("Authenticate at this URL: ");
             Console.WriteLine();
