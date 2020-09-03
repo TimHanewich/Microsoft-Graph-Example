@@ -55,6 +55,7 @@ namespace MicrosoftGraphHttpApiExample
 
 
             //Construct the web api URl - This will be the endpoint that we use for all of our API calls to the CDS
+            //You can also navigate to this URL to see a list of all entity setters
             string web_api_url = env_url + "/api/data/v9.0/";
             
             //Give options as to what they want to do
