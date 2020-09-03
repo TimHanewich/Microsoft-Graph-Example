@@ -66,6 +66,8 @@ namespace MicrosoftGraphHttpApiExample
                 Console.WriteLine("2 - Retrieve an Account record");
                 Console.WriteLine("3 - Retrieve a custom record");
                 Console.WriteLine("4 - Update a custom entity name");
+                Console.WriteLine("5 - Update a custom entity's Lookup field");
+                Console.WriteLine("6 - Add new Account record");
                 string ToDo = Console.ReadLine();
                 Console.WriteLine();
                 if (ToDo == "1")
@@ -143,6 +145,54 @@ namespace MicrosoftGraphHttpApiExample
                     string content = resp.Content.ReadAsStringAsync().Result;
                     Console.WriteLine("Response content: " + content);
                     Console.WriteLine("Call complete!");
+                }
+                else if (ToDo == "5")
+                {
+                    //Make the update body
+                    //You only have to specify the properites that you want to update
+                    //The name of the field is the SCHEMA name, which you can find in the Dynamics 365 Solution explorer when you enter into a field. Note that this IS case sensitive.
+                    //Since this is a lookup value, you also must include two things that you typically wouldn't include for all other fields
+                    //  1 - You need to include the "@odata.bind" at the end of the field schema name (still inside of the quotations)
+                    //  2 - Instead of just plugging in the GUID value, you must wrap it inside the entity setter for that entity type ("crda6_animals" below).
+                    string update_body = "{\"crda6_ParentAnimal@odata.bind\":\"crda6_animals(e8d51151-12ee-ea11-a817-000d3a3b7d88)\"}";
+
+                    //Construct the query
+                    string animalGUID = "12b673d8-11ee-ea11-a817-000d3a3b7d88";
+                    string query_endpoint = "crda6_animals(" + animalGUID + ")";
+
+                    //Construct the request
+                    HttpRequestMessage req = new HttpRequestMessage();
+                    req.Method = HttpMethod.Patch; //Patch method used for record updates
+                    req.Headers.Add("Authorization", "Bearer " + access_token);
+                    req.RequestUri = new Uri(web_api_url + query_endpoint);
+                    req.Content = new StringContent(update_body, Encoding.UTF8, "application/json");
+
+                    //Make the call
+                    HttpClient hc = new HttpClient();
+                    HttpResponseMessage resp = hc.SendAsync(req).Result;
+                    Console.WriteLine("Response status code: " + resp.StatusCode.ToString());
+                    string content = resp.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine("Response content: " + content);
+                    Console.WriteLine("Call complete!");
+                }
+                else if (ToDo == "6")
+                {
+                    string body = "{\"name\":\"API Industries\"}";
+
+                    //Construct the request
+                    HttpRequestMessage req = new HttpRequestMessage();
+                    req.Content = new StringContent(body, Encoding.UTF8, "application/json");
+                    req.Method = HttpMethod.Post;
+                    req.RequestUri = new Uri(web_api_url + "accounts");
+                    req.Headers.Add("Authorization", "Bearer " + access_token);
+
+                    //Make the call
+                    HttpClient hc = new HttpClient();
+                    HttpResponseMessage msg = hc.SendAsync(req).Result;
+                    Console.WriteLine("Status Code: " + msg.StatusCode.ToString());
+                    Console.WriteLine("Return Content: " + msg.Content.ReadAsStringAsync().Result);
+                    Console.WriteLine("Call complete!");
+                    
                 }
                 else
                 {
