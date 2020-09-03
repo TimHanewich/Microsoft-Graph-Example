@@ -65,7 +65,7 @@ namespace MicrosoftGraphHttpApiExample
                 Console.WriteLine("1 - Test and prove conneciton with 'WhoAmI'");
                 Console.WriteLine("2 - Retrieve an Account record");
                 Console.WriteLine("3 - Retrieve a custom record");
-                Console.WriteLine("4 - Update custom entity reference");
+                Console.WriteLine("4 - Update a custom entity name");
                 string ToDo = Console.ReadLine();
                 Console.WriteLine();
                 if (ToDo == "1")
@@ -123,7 +123,6 @@ namespace MicrosoftGraphHttpApiExample
                 }
                 else if (ToDo == "4")
                 {
-                    //string update_body = "{\"item/_crda6_parentanimal_value@odata.bind\":\"crda6_animals(e8d51151-12ee-ea11-a817-000d3a3b7d88)\"}"; //Here we are updating one of the fields (change the parent animal)
                     string update_body = "{\"crda6_name\":\"Johnny the Evolved Jaguar\"}";
 
                     //Construct the query
