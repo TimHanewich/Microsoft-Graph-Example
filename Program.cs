@@ -10,7 +10,7 @@ namespace MicrosoftGraphHttpApiExample
     {
         static void Main(string[] args)
         {
-            
+            CommonDataServiceExample.RunCdsExample();
 
         }
 
