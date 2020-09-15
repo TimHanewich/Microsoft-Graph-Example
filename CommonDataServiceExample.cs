@@ -152,6 +152,7 @@ namespace MicrosoftGraphHttpApiExample
                     //Make the update body
                     //You only have to specify the properites that you want to update
                     //The name of the field is the SCHEMA name, which you can find in the Dynamics 365 Solution explorer when you enter into a field. Note that this IS case sensitive.
+                    //The SCHEMA name is in the column "Schema Name" when you pull up the entity fields in the classic entity explorer. See the image "SchemaName.JPG" in this repo.
                     //Since this is a lookup value, you also must include two things that you typically wouldn't include for all other fields
                     //  1 - You need to include the "@odata.bind" at the end of the field schema name (still inside of the quotations)
                     //  2 - Instead of just plugging in the GUID value, you must wrap it inside the entity setter for that entity type ("crda6_animals" below).
