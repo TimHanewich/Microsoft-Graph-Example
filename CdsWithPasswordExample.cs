@@ -12,6 +12,12 @@ namespace MicrosoftGraphHttpApiExample
         //This demo ONLY shows how to authenticate with the CDS api service (Dataverse)
         public static async Task DemoAsync()
         {
+            //How to get an access token by providing username & password:
+            //https://bguidinger.com/blog/automating-web-api-authorization-postman
+            //https://docs.microsoft.com/en-us/azure/active-directory-b2c/add-ropc-policy?tabs=app-reg-ga&pivots=b2c-user-flow#test-the-ropc-flow
+                //Same as this doc here, but with the resource parameter specified (the cds db url), not the scopes parameter specified.
+
+
             //Inputs
             Guid ClientId = Guid.Parse("a5ad2463-0a21-4e98-bae8-dc36bdf432ba");
             string Resource = "https://ccdscannedbatch20210331.crm.dynamics.com/"; //The Dataverse url to your database
