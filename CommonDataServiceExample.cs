@@ -204,5 +204,22 @@ namespace MicrosoftGraphHttpApiExample
             
 
         }
+    
+    
+        //Notes for working with tables & fields
+
+        //To just get all entity logical names:
+        //https://<mine>.crm.dynamics.com/api/data/v9.0
+
+        //Entity Definitions (data about entities):
+        //Warning! This is big! About 5 MB's in a relatively small environment
+        //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions
+
+        //Get one specific based on the metadata ID (field "MetadataId" from the above):
+        //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions(c8cb849b-191d-eb11-a814-000d3a995243)
+    
+        //Get metdata for a specific entity WITH THE FIELD PROPERTIES!
+        //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions(c8cb849b-191d-eb11-a814-000d3a995243)?$expand=Attributes
+    
     }
 }
