@@ -212,6 +212,7 @@ namespace MicrosoftGraphHttpApiExample
         //https://<mine>.crm.dynamics.com/api/data/v9.0
 
         //Entity Definitions (data about entities):
+        //https://docs.microsoft.com/en-us/powerapps/developer/data-platform/webapi/use-web-api-metadata
         //Warning! This is big! About 5 MB's in a relatively small environment
         //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions
 
@@ -219,6 +220,7 @@ namespace MicrosoftGraphHttpApiExample
         //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions(c8cb849b-191d-eb11-a814-000d3a995243)
     
         //Get metdata for a specific entity WITH THE FIELD PROPERTIES!
+        //https://docs.microsoft.com/en-us/powerapps/developer/data-platform/webapi/query-metadata-web-api
         //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions(c8cb849b-191d-eb11-a814-000d3a995243)?$expand=Attributes
     
     }
