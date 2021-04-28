@@ -222,6 +222,11 @@ namespace MicrosoftGraphHttpApiExample
         //Get metdata for a specific entity WITH THE FIELD PROPERTIES!
         //https://docs.microsoft.com/en-us/powerapps/developer/data-platform/webapi/query-metadata-web-api
         //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions(c8cb849b-191d-eb11-a814-000d3a995243)?$expand=Attributes
+
+        //Get specific attributes from every EntityDefinition record (for every table);
+        //https://<mine>.crm.dynamics.com/api/data/v9.0/EntityDefinitions?$select=LogicalName,DisplayName,LogicalCollectionName
+        //The example above pulls the logical name, display name, and logical collection name for every table.
+        //The logical collection name is important to get because this is the name that you have to have to request specific metadata for (see above)
     
     }
 }
